@@ -1,7 +1,7 @@
 {
 	"name": "Clipboard html to markdown",
 	"version": "0.1.0",
-	"manifest_version": 2,
+	"manifest_version": 3,
 
 	"description": "クリップボードのhtmlをmarkdownに変換",
 
@@ -15,12 +15,12 @@
 		}
 	},
 
-	"browser_action": {
+	"action": {
 		"default_popup": "browser-action/popup.html"
 	},
 
 	"background": {
-		"persistent": false,
-		"page": "background.html"
+		"service_worker": "background.js",
+		"type": "module"
 	}
 }
