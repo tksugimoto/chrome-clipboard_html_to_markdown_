@@ -174,6 +174,11 @@ const formats = [new transformFormat({
 		return `${backquotes} ${text} ${backquotes}`;
 	},
 }), new transformFormat({
+	isMatch: ({tagName}) => tagName === 'DIV',
+	transform: ({getChildrenText}) => {
+		return getChildrenText() + '  \n';
+	},
+}), new transformFormat({
 	isMatch: ({tagName}) => tagName === 'P',
 	transform: ({getChildrenText, state}) => {
 		return NEW_LINE.repeat(state.inListItem ? 0 : 2) + getChildrenText();

@@ -17,7 +17,7 @@ document.execCommand('Paste');
 pasteTarget.contentEditable = false;
 
 if (pasteTarget.innerText) {
-	const markdownText = transformToMarkdownFormat(pasteTarget);
+	const markdownText = transformToMarkdownFormat(pasteTarget).trim();
 
 	output.value = markdownText;
 	output.select();

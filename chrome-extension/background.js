@@ -28,7 +28,7 @@ const convertToMarkdown = (() => {
 		.forEach(item => {
 			item.getAsString(htmlText => {
 				const htmlElement = htmlToElement(htmlText);
-				const markdownText = transformToMarkdownFormat(htmlElement);
+				const markdownText = transformToMarkdownFormat(htmlElement).trim();
 				copy(markdownText);
 			});
 		});
